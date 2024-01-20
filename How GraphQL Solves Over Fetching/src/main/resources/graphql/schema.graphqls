@@ -1,0 +1,43 @@
+# Apple Object
+type Apple{
+    # primary key of apple
+    appleId:ID!
+    # apple Name
+    appleName:String!
+    # apple availability
+    available: Boolean
+    # apple Price
+    price:Float
+    # Vendor list
+    vendors:[Vendor]
+    # stores List
+    stores:[Store]
+}
+# Store Object
+type Store{
+    # primary key of store
+    storeId:ID!
+    # primary key of apple
+    appleId:ID!
+    # apple Store Name
+    storeName:String!
+    # apple store Address
+    storeAddress:String!
+}
+# Store Object
+type Vendor{
+    # primary key of vendor
+    vendorId:ID!
+    # primary key of apple
+    appleId:ID!
+    # apple vendor Name
+    vendorName:String!
+    # vendor availability
+    available: Boolean
+}
+
+# Apple Query
+type Query{
+    # query to get all Apples
+    findApple:Apple
+}
